@@ -1,0 +1,16 @@
+How to use this plugin:
+
+1. Move session_anywhere directory into app/plugins directory.
+
+2. Add "SessionAnywhre.SessionAnywhere" to $components property of AppController as shown below.
+	var $actsAs = array(
+		'Session',
+		'SessionAnywhere.SessionAnywhere'
+	);
+	//be sure 'Session' precedes.
+
+3. Now you can access session data via static Session class from anywhere like this.
+	Session::read('foo');
+	Session::write('bar', 'hoge');
+	Session::check('foo');
+	Session::delete('bar');
